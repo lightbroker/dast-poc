@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DastPocTarget", "DastPocTarget\DastPocTarget.csproj", "{31989EB9-42A2-4B49-9A20-1CC57DF7822C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DastPocTarget.Secondary", "DastPocTarget.Secondary\DastPocTarget.Secondary.csproj", "{9FC7CBFB-CAAD-4F2E-82FD-477863166C1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31989EB9-42A2-4B49-9A20-1CC57DF7822C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31989EB9-42A2-4B49-9A20-1CC57DF7822C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31989EB9-42A2-4B49-9A20-1CC57DF7822C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31989EB9-42A2-4B49-9A20-1CC57DF7822C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC7CBFB-CAAD-4F2E-82FD-477863166C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC7CBFB-CAAD-4F2E-82FD-477863166C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC7CBFB-CAAD-4F2E-82FD-477863166C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC7CBFB-CAAD-4F2E-82FD-477863166C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33E0BFA9-6828-4297-9933-9D38312EE388}
+	EndGlobalSection
+EndGlobal
