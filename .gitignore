@@ -1,0 +1,15 @@
+src/DastPocTarget/appsettings.Development.json
+src/DastPocTarget/.vs
+src/DastPocTarget.Secondary/.vs
+src/DastPocTarget/.vs/DastPocTarget/FileContentIndex
+src/DastPocTarget/bin
+src/DastPocTarget/obj
+src/DastPocTarget/Properties/PublishProfiles
+src/DastPocTarget/Properties/ServiceDependencies
+src/DastPocTarget.Secondary/appsettings.Development.json
+src/DastPocTarget.Secondary/DastPocTarget.Secondary.csproj.user
+src/DastPocTarget.Secondary/bin
+src/DastPocTarget.Secondary/obj
+src/DastPocTarget.Secondary/Properties/launchSettings.json
+src/DastPocTarget.Secondary/Properties/PublishProfiles
+src/DastPocTarget.Secondary/Properties/ServiceDependencies
