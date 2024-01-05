@@ -1,6 +1,6 @@
 name: Python + ZAP PoC
 
-on: [push]
+# on: [push]
 
 jobs:
   build:
