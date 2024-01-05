@@ -19,4 +19,4 @@ jobs:
       - name: test Python stuff
         run: |
           python -c "import sys; print(f'Using Python {sys.version}')"
-          python ./scripts/echo_test.py
+          python .github/workflows/scripts/echo_test.py
