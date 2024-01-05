@@ -19,9 +19,6 @@ jobs:
           python-version: '3.12.1'
           architecture: 'x64'
 
-      - name: Install Python ZAP library
-        run: pip install zaproxy
-
       - name: Install ZAP Proxy
         run: |
           sudo snap install zaproxy --classic
@@ -33,4 +30,5 @@ jobs:
 
       - name: Run API scripts
         run: |
+          sudo pip install zaproxy
           sudo python dast/scripts/dast.py -k "$ZAP_API_KEY"
