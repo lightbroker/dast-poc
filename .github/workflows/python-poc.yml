@@ -1,0 +1,22 @@
+name: Python PoC
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12.1'
+          architecture: 'x64'
+
+      - name: test Python stuff
+        run: |
+          python -c "import sys; print(f'Using Python {sys.version}')"
+          python .github/workflows/scripts/echo_test.py
