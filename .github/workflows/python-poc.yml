@@ -13,10 +13,11 @@ jobs:
       - name: Install ZAP Proxy
         run: |
           sudo snap install zaproxy --classic
-          dpkg -L zaproxy
+          # dpkg -L zaproxy
 
       - name: Test ZAP
         run: zaproxy -version
+        run: zaproxy -daemon -config api.key=change-me-123
 
       - name: Set up Python
         uses: actions/setup-python@v4
