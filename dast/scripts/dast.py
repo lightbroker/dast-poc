@@ -35,7 +35,7 @@ def set_context_urls():
 
 
 def set_logged_in_indicator():
-    logged_in_regex = '\Q<a id="LoginLink" href="/logout.jsp">\E'
+    logged_in_regex = 'logout.jsp'
     zap.authentication.set_logged_in_indicator(context_id, logged_in_regex)
     print('Configured logged in indicator regex: ')
 

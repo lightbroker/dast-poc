@@ -5,6 +5,9 @@ on: [push]
 jobs:
   build:
 
+    env:
+      ZAP_API_KEY: ${{ secrets.ZAP_API_KEY }}
+    
     runs-on: ubuntu-latest
 
     steps:
@@ -24,9 +27,10 @@ jobs:
           sudo snap install zaproxy --classic
           # dpkg -L zaproxy
 
-      - name: Run ZAP Proxy and API scripts
-        env:
-          ZAP_API_KEY: ${{ secrets.ZAP_API_KEY }}
+      - name: Run ZAP Proxy
         run: |
           zaproxy -daemon -config api.key="$ZAP_API_KEY" &
+
+      - name: Run API scripts
+        run: |
           python dast/scripts/dast.py -k "$ZAP_API_KEY"
