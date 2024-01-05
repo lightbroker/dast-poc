@@ -12,7 +12,7 @@ jobs:
 
       - name: Install ZAP Proxy
         run: |
-          sudo apt-get install -y zaproxy
+          sudo snap install zaproxy --classic
           dpkg -L zaproxy
 
       - name: Test ZAP
