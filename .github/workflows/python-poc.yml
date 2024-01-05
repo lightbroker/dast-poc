@@ -33,4 +33,4 @@ jobs:
 
       - name: Run API scripts
         run: |
-          python dast/scripts/dast.py -k "$ZAP_API_KEY"
+          sudo python dast/scripts/dast.py -k "$ZAP_API_KEY"

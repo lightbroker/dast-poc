@@ -2,7 +2,7 @@
 #   schedule: 
 #     - cron: '15 0 1,15 * *' # https://crontab.guru/
 
-on: [push]
+# on: [push]
 
 jobs:
   zap_scan:
