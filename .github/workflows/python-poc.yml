@@ -10,23 +10,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install ZAP Proxy
-        run: |
-          sudo snap install zaproxy --classic
-          # dpkg -L zaproxy
-
-      - name: Test ZAP
-        run: |
-          zaproxy -version
-          zaproxy -daemon -config api.key=change-me-123
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12.1'
           architecture: 'x64'
 
-      - name: Test Python stuff
+      - name: Install Python ZAP library
+        run: pip install zaproxy
+
+      - name: Install ZAP Proxy
         run: |
-          python -c "import sys; print(f'Using Python {sys.version}')"
-          # python dast/scripts/dast.py
+          sudo snap install zaproxy --classic
+          # dpkg -L zaproxy
+
+      - name: Run ZAP Proxy and API scripts
+        env:
+          ZAP_API_KEY: ${{ secrets.ZAP_API_KEY }}
+        run: |
+          zaproxy -daemon -config api.key="$ZAP_API_KEY" &
+          python dast/scripts/dast.py -k "$ZAP_API_KEY"
