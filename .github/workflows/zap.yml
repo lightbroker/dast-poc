@@ -33,4 +33,5 @@ jobs:
       - name: Reporting
         run: |
           # report_json.json report_md.md report_html.html
-          sudo cat report_json.json .zap/zap-${{ env.timestamp }}.json 
+          touch .zap/zap-${{ env.timestamp }}.json
+          sudo cat report_json.json .zap/zap-${{ env.timestamp }}.json
