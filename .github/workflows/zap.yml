@@ -36,13 +36,23 @@ jobs:
       #     touch .zap/zap-${{ env.timestamp }}.json
       #     sudo cat report_json.json .zap/zap-${{ env.timestamp }}.json
 
-      - name: Prepare Report
-        run: |
-          mkdir -p .zap/results
-          cat report_json.json > .zap/results/zap-${{ env.timestamp }}.json
+      # - name: Prepare Report
+      #   run: |
+      #     mkdir -p .zap/results
+      #     cat report_json.json > .zap/results/zap-${{ env.timestamp }}.json
 
-      - name: Reporting (Test)
-        uses: actions/upload-artifact@v4
-        with:
-          name: zap-results-artifact
-          path: .zap/results/zap-${{ env.timestamp }}.json
+      # - name: Reporting (Test)
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: zap-results-artifact
+      #     path: .zap/results/zap-${{ env.timestamp }}.json
+
+      - name: 
+      - uses: actions/checkout@v4
+      - run: |
+          cat report_json.json > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
