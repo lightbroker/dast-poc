@@ -12,7 +12,7 @@ jobs:
     steps:
       
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: zap-tests
       
@@ -47,7 +47,7 @@ jobs:
       #     name: zap-results-artifact
       #     path: .zap/results/zap-${{ env.timestamp }}.json
 
-      - name: 
+      - name: Reporting Test v2
         uses: actions/checkout@v4
         with:
           run: |
