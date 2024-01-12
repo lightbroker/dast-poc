@@ -36,10 +36,12 @@ jobs:
       #     touch .zap/zap-${{ env.timestamp }}.json
       #     sudo cat report_json.json .zap/zap-${{ env.timestamp }}.json
 
-      - name: Reporting (Test)
+      - name: Prepare Report
         run: |
           mkdir -p .zap/results
           cat report_json.json > .zap/results/zap-${{ env.timestamp }}.json
+
+      - name: Reporting (Test)
         uses: actions/upload-artifact@v4
         with:
           name: zap-results-artifact
