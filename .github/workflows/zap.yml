@@ -37,9 +37,10 @@ jobs:
       #     sudo cat report_json.json .zap/zap-${{ env.timestamp }}.json
 
       - name: Reporting (Test)
-      - run: mkdir -p .zap/results
-      - run: cat report_json.json > .zap/results/zap-${{ env.timestamp }}.json
-      - uses: actions/upload-artifact@v4
+        run: |
+          mkdir -p .zap/results
+          cat report_json.json > .zap/results/zap-${{ env.timestamp }}.json
+        uses: actions/upload-artifact@v4
         with:
           name: zap-results-artifact
           path: .zap/results/zap-${{ env.timestamp }}.json
