@@ -50,7 +50,7 @@ jobs:
       - name: Reporting Test v2
         uses: actions/checkout@v4
         with:
-          repository: dast-poc
+          repository: lightbroker/dast-poc
           token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
           path: dast/results
       
