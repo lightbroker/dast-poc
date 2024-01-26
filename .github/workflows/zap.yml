@@ -50,10 +50,15 @@ jobs:
       - name: Reporting Test v2
         uses: actions/checkout@v4
         with:
-          run: |
-            cat report_json.json > generated.txt
-            git config user.name github-actions
-            git config user.email github-actions@github.com
-            git add .
-            git commit -m "generated"
-            git push
+          repository: dast-poc
+          token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
+          path: dast/results
+      
+      - name: Try writing results to repo
+        run: |
+          cat report_json.json > dast/results/generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
