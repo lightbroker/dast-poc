@@ -28,10 +28,7 @@ jobs:
           target: 'http://altoro.testfire.net'
           rules_file_name: '.zap/rules.tsv'
           # TODO pass secrets in via variables for actual targets
-          cmd_options: |
-            -a -T 3 -n .zap/contexts/authn_scan.context \
-            -J .zap/reports/report-${{ env.timestamp }}.json \
-            -w .zap/reports/report-${{ env.timestamp }}.md
+          cmd_options: -a -T 3 -n .zap/contexts/authn_scan.context -J .zap/reports/report-${{ env.timestamp }}.json -w .zap/reports/report-${{ env.timestamp }}.md
             
       # - name: Reporting
       #   run: |
