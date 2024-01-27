@@ -17,7 +17,6 @@ jobs:
           echo "{timestamp}={$(date +%s)}" >> $GITHUB_STATE
 
       - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.8.0 # zaproxy/action-baseline@v0.10.0 # TODO env variable
         run:
           docker run -v $(pwd):/zap/wrk/:rw -t ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py \
             -t 'http://altoro.testfire.net' -g .zap/contexts/authn_scan.context -J .zap/reports/report-${{ env.timestamp }}.json -w .zap/reports/report-${{ env.timestamp }}.md
