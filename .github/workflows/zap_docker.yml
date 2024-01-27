@@ -19,7 +19,7 @@ jobs:
       - name: ZAP Scan
         run:
           docker run -v $(pwd):/zap/wrk/:rw -t ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py \
-            -t 'http://altoro.testfire.net' -g .zap/contexts/authn_scan.context -J .zap/reports/report-${{ env.timestamp }}.json -w .zap/reports/report-${{ env.timestamp }}.md
+            -t 'http://altoro.testfire.net' -n .zap/contexts/authn_scan.context -J .zap/reports/report-${{ env.timestamp }}.json -w .zap/reports/report-${{ env.timestamp }}.md
             
       - name: Try writing results to repo
         run: |
