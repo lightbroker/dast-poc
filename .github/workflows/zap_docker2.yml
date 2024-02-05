@@ -29,6 +29,7 @@ jobs:
       - name: Run scan
         run: |
           (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
-          echo 'more testing....'
-          echo $(pwd)
+          ls -al
+          echo '**** higher dir:'
+          ls -al ..
         # run: python -v zap-full-scan.py -t 'http://altoro.testfire.net' -n $(pwd)/.zap/contexts/authn_scan.context -J $(pwd)/.zap/reports/report-1.json -w $(pwd)/.zap/reports/report-1.md
