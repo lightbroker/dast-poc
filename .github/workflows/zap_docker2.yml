@@ -9,9 +9,9 @@ jobs:
     #     NODE_ENV: development
     #   ports:
     #     - 80
-      volumes:
-        - zap/wrk:rw
+    #   volumes:
+    #     - zap/wrk:rw
     #   options: 
     steps:
       - name: Run scan
-        run: zap-full-scan.py -t 'http://altoro.testfire.net' -n .zap/contexts/authn_scan.context -J .zap/reports/report-1.json -w .zap/reports/report-1.md
+        run: zap-full-scan.py -t 'http://altoro.testfire.net' -n $(pwd)/.zap/contexts/authn_scan.context -J $(pwd)/.zap/reports/report-1.json -w $(pwd)/.zap/reports/report-1.md
