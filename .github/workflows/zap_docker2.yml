@@ -9,8 +9,8 @@ jobs:
     #     NODE_ENV: development
     #   ports:
     #     - 80
-    #   volumes:
-    #     - zap/wrk:rw
+      volumes:
+        - .:/zap/wrk
     #   options: 
     steps:
       - name: Run scan
