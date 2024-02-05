@@ -1,17 +1,26 @@
 name: Another ZAP Docker Test
 on: [push]
 jobs:
-  container-test-job:
+  test:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/zaproxy/zaproxy:stable
-    #   env:
-    #     NODE_ENV: development
-    #   ports:
-    #     - 80
-      volumes:
-        - /home/runner/work/_temp/_github_workflow:/zap/wrk
-    #   options: 
+    name: test
     steps:
-      - name: Run scan
-        run: zap-full-scan.py -t 'http://altoro.testfire.net' -n $(pwd)/.zap/contexts/authn_scan.context -J $(pwd)/.zap/reports/report-1.json -w $(pwd)/.zap/reports/report-1.md
+      - name: test PWD
+        run: | 
+          echo '************* Testing $(pwd)'
+          echo $(pwd)
+
+  # container-test-job:
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     image: ghcr.io/zaproxy/zaproxy:stable
+  #   #   env:
+  #   #     NODE_ENV: development
+  #   #   ports:
+  #   #     - 80
+  #     volumes:
+  #       - /home/runner/work/_temp/_github_workflow:/zap/wrk
+  #   #   options: 
+  #   steps:
+  #     - name: Run scan
+  #       run: zap-full-scan.py -t 'http://altoro.testfire.net' -n $(pwd)/.zap/contexts/authn_scan.context -J $(pwd)/.zap/reports/report-1.json -w $(pwd)/.zap/reports/report-1.md
