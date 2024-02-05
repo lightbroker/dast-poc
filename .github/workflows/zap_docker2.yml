@@ -22,9 +22,9 @@ jobs:
         - /home/runner/work/dast-poc/dast-poc:/zap/wrk
     #   options: 
     steps:
-      - uses: actions/setup-java@v4
-        with:
-          distribution: 'microsoft'
-          java-version: '11'
+      # - uses: actions/setup-java@v4
+      #   with:
+      #     distribution: 'microsoft'
+      #     java-version: '11'
       - name: Run scan
-        run: zap-full-scan.py -t 'http://altoro.testfire.net' -n $(pwd)/.zap/contexts/authn_scan.context -J $(pwd)/.zap/reports/report-1.json -w $(pwd)/.zap/reports/report-1.md
+        run: python -v zap-full-scan.py -t 'http://altoro.testfire.net' -n $(pwd)/.zap/contexts/authn_scan.context -J $(pwd)/.zap/reports/report-1.json -w $(pwd)/.zap/reports/report-1.md
