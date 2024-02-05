@@ -33,4 +33,4 @@ jobs:
         #   ls -al
         #   echo '**** higher dir:'
         #   ls -al ..
-        run: zap-full-scan.py -t 'http://altoro.testfire.net' -n /home/runner/work/dast-poc/dast-poc/.zap/contexts/authn_scan.context -J /home/runner/work/dast-poc/dast-poc/.zap/reports/report-1.json -w /home/runner/work/dast-poc/dast-poc/.zap/reports/report-1.md
+        run: python -v zap-full-scan.py -t 'http://altoro.testfire.net' -n /home/runner/work/dast-poc/dast-poc/.zap/contexts/authn_scan.context -J /home/runner/work/dast-poc/dast-poc/.zap/reports/report-1.json -w /home/runner/work/dast-poc/dast-poc/.zap/reports/report-1.md
