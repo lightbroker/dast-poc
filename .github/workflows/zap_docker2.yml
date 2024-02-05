@@ -1,0 +1,17 @@
+name: Another ZAP Docker Test
+on: [push]
+jobs:
+  container-test-job:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/zaproxy/zaproxy:stable
+    #   env:
+    #     NODE_ENV: development
+    #   ports:
+    #     - 80
+    #   volumes:
+    #     - my_docker_volume:/volume_mount
+    #   options: 
+    steps:
+      - name: Run scan
+        run: zap-full-scan.py -t 'http://altoro.testfire.net' -n .zap/contexts/authn_scan.context -J .zap/reports/report-1.json -w .zap/reports/report-1.md
