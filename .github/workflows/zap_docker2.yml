@@ -10,7 +10,7 @@ jobs:
     #   ports:
     #     - 80
       volumes:
-        - zap/wrk/:rw
+        - zap/wrk:rw
     #   options: 
     steps:
       - name: Run scan
