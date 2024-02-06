@@ -76,10 +76,10 @@ Persistent attacks occur when the malicious code is submitted to a web site wher
   * Attack: `#jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */oNcliCk=alert(5397) )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert(5397)//>\x3e`
   * Evidence: ``
   * Other Info: `Tag name: input Att name:  Att id: `
-* URL: http://altoro.testfire.net/doLogin%3Fname=abc%23%3Cimg%20src=%22random.gif%22%20onerror=alert(5397&29%3E
+* URL: http://altoro.testfire.net/doLogin%23jaVasCript:/*-/*%60/*%5C%60/*'/*%22/**/(/*%20*/oNcliCk=alert(5397&29%20&29//%250D%250A%250d%250a//%3C/stYle/%3C/titLe/%3C/teXtarEa/%3C/scRipt/--!%3E%5Cx3csVg/%3CsVg/oNloAd=alert(5397&29//%3E%5Cx3e
   * Method: `POST`
   * Parameter: ``
-  * Attack: `?name=abc#<img src="random.gif" onerror=alert(5397)>`
+  * Attack: `#jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */oNcliCk=alert(5397) )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert(5397)//>\x3e`
   * Evidence: ``
   * Other Info: `Tag name: input Att name:  Att id: `
 
@@ -402,7 +402,7 @@ The web server is configured to serve responses to ambiguous URLs in a manner th
 * URL: http://altoro.testfire.net/login.jsp
   * Method: `GET`
   * Parameter: ``
-  * Attack: `http://altoro.testfire.net/login.jsp/haqlm/92ndo`
+  * Attack: `http://altoro.testfire.net/login.jsp/xynvo/9j2pz`
   * Evidence: `<a id="CatLink1" class="subheader" href="index.jsp?content=personal.htm">PERSONAL</a>`
   * Other Info: `No <base> tag was specified in the HTML <head> tag to define the location for relative URLs.
 A Content Type of "text/html;charset=ISO-8859-1" was specified. If the web browser is employing strict parsing rules, this will prevent cross-content attacks from succeeding. Quirks Mode in the web browser would disable strict parsing.  
@@ -902,7 +902,7 @@ It may be possible to enumerate usernames, based on differing HTTP responses whe
   * Parameter: `JSESSIONID`
   * Attack: `Manipulate [cookie] field: [JSESSIONID] and monitor the output `
   * Evidence: ``
-  * Other Info: `[cookie] parameter [JSESSIONID] leaks information on whether a user exists. The [2] differences in output, for the valid original username value [7F39AA36BD0F3D3004AE2EE72DE7795A], and invalid username value [fnfvzmtigoqcesgmudigpmosrtfpthoy] are:
+  * Other Info: `[cookie] parameter [JSESSIONID] leaks information on whether a user exists. The [2] differences in output, for the valid original username value [3182FCDA55EA69C4546FB014B0C163EC], and invalid username value [qybbdovuhgkvouzqwgsqepcxehkroppq] are:
 [
 (Changed Text)
 Output for Valid Username  : [position: 5, size: 1, lines: [content-length: 8360]]
@@ -1141,21 +1141,21 @@ The given response has been identified as containing a session management token.
   * Method: `GET`
   * Parameter: `JSESSIONID`
   * Attack: ``
-  * Evidence: `7F39AA36BD0F3D3004AE2EE72DE7795A`
+  * Evidence: `3182FCDA55EA69C4546FB014B0C163EC`
   * Other Info: `
 cookie:JSESSIONID`
 * URL: http://altoro.testfire.net/
   * Method: `GET`
   * Parameter: `JSESSIONID`
   * Attack: ``
-  * Evidence: `55FE7A8D6211239C7916082757F618E2`
+  * Evidence: `22C0313035A6300CEC4ACE099DE305F3`
   * Other Info: `
 cookie:JSESSIONID`
-* URL: http://altoro.testfire.net/doLogin
-  * Method: `POST`
+* URL: http://altoro.testfire.net/login.jsp
+  * Method: `GET`
   * Parameter: `JSESSIONID`
   * Attack: ``
-  * Evidence: `7F39AA36BD0F3D3004AE2EE72DE7795A`
+  * Evidence: `3182FCDA55EA69C4546FB014B0C163EC`
   * Other Info: `
 cookie:JSESSIONID`
 
@@ -1241,13 +1241,13 @@ Check for differences in response based on fuzzed User Agent (eg. mobile sites, 
 * URL: http://altoro.testfire.net/login.jsp
   * Method: `GET`
   * Parameter: `Header User-Agent`
-  * Attack: `Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko`
+  * Attack: `Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)`
   * Evidence: ``
   * Other Info: ``
 * URL: http://altoro.testfire.net/login.jsp
   * Method: `GET`
   * Parameter: `Header User-Agent`
-  * Attack: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3739.0 Safari/537.36 Edg/75.0.109.0`
+  * Attack: `Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko`
   * Evidence: ``
   * Other Info: ``
 * URL: http://altoro.testfire.net/login.jsp
