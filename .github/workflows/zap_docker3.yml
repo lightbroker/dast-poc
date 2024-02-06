@@ -17,7 +17,7 @@ jobs:
           echo "{timestamp}={$(date +%s)}" >> $GITHUB_STATE
 
       - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.8.0 # zaproxy/action-baseline@v0.10.0 # TODO env variable
+        uses: ${{ env.ZAP_FULL_SCAN_ACTION }} # zaproxy/action-baseline@v0.10.0 # TODO env variable
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: 'ghcr.io/zaproxy/zaproxy:stable'
@@ -27,15 +27,5 @@ jobs:
 
       - name: Try writing results to repo
         run: |
-          echo "Current dir: $(pwd)"
-          TIMESTAMP=$(date +%s)
-          TARGET='altoro.testfire.net'
-          mkdir -p .zap/reports/
-          cat report_md.md > ".zap/reports/dast_$TARGET_$TIMESTAMP.md"
-          cat report_json.json | jq > ".zap/reports/dast_$TARGET_$TIMESTAMP.json"
-          rm report_*
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "report output: $TIMESTAMP"
-          git push
+          cp ./reporting/scripts/publish_reports.sh .
+          chmod +x publish_reports.sh
