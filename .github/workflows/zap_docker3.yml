@@ -31,10 +31,11 @@ jobs:
 
       - name: Try writing results to repo
         run: |
-          git status
-          mkdir .zap/reports
+          timestamp=$(date +%s)
+          [ -d .zap/reports ] || mkdir .zap/reports
           cp report_json.json .zap/reports/report_json.json
-          cat .zap/reports/report_json.json | jq > .zap/reports/report_json_formatted.json
+          cp report_md.md .zap/reports/report_md.md
+          cat .zap/reports/report_json.json | jq > '.zap/reports/report_json_formatted_$timestamp.json'
           rm report_json.json
           git config user.name github-actions
           git config user.email github-actions@github.com
