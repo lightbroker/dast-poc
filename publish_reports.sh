@@ -3,7 +3,7 @@ TIMESTAMP=$(TZ=UTC date +%s)
 UTC_MONTH=$(TZ=UTC date +%m)
 UTC_YEAR=$(TZ=UTC date +%Y)
 TARGET=$1
-DIR_PATH="/reporting/output/${UTC_YEAR}/${UTC_MONTH}" 
+DIR_PATH="reporting/output/${UTC_YEAR}/${UTC_MONTH}" 
 
 # create timestamped report output files and clean up
 mkdir -p ${DIR_PATH}
