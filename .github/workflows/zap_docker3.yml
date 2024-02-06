@@ -32,13 +32,13 @@ jobs:
       - name: Try writing results to repo
         run: |
           timestamp=$(date +%s)
+          target='altoro.testfire.net'
           [ -d .zap/reports ] || mkdir .zap/reports
-          cp report_json.json .zap/reports/report_json.json
-          cp report_md.md .zap/reports/report_md.md
-          cat .zap/reports/report_json.json | jq > '.zap/reports/report_json_formatted_$timestamp.json'
-          rm report_json.json
+          cat report_md.md > ".zap/reports/dast_$target_$timestamp.md"
+          cat report_json.json | jq > ".zap/reports/dast_$target_$timestamp.json"
+          rm report_*
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git commit -m "report output: $(date +%s)"
+          git commit -m "report output: $timestamp"
           git push
