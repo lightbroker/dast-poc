@@ -23,6 +23,5 @@ jobs:
 
       - name: Try writing results to repo
         run: |
-          cp ./reporting/scripts/publish_reports.sh .
-          chmod +x publish_reports.sh
-          ./publish_reports.sh 'altoro.testfire.net'
+          chmod +x ./reporting/scripts/publish_reports.sh
+          ./reporting/scripts/publish_reports.sh 'altoro.testfire.net' $(pwd)
