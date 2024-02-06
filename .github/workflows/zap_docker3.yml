@@ -27,6 +27,7 @@ jobs:
 
       - name: Try writing results to repo
         run: |
+          echo "Current dir: $(pwd)"
           TIMESTAMP=$(date +%s)
           TARGET='altoro.testfire.net'
           mkdir -p .zap/reports/
