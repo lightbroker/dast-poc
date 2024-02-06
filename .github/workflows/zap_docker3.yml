@@ -25,4 +25,4 @@ jobs:
         run: |
           cp ./reporting/scripts/publish_reports.sh .
           chmod +x publish_reports.sh
-          ./publish_reports.sh
+          ./publish_reports.sh 'altoro.testfire.net'
