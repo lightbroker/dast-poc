@@ -21,7 +21,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: 'ghcr.io/zaproxy/zaproxy:stable'
-          target: 'https://altoro.testfire.net'
+          target: 'http://altoro.testfire.net'
           rules_file_name: 'rules/rules.altoro.testfire.net.tsv'
           allow_issue_writing: true
           issue_title: 'DAST Scan: altoro.testfire.net'
