@@ -28,4 +28,6 @@ jobs:
           cmd_options: -a -T 3 -n ./contexts/$$TARGET_HOSTNAME$$$.context
 
       - name: Publish Scan Results
-        run: ./scripts/bash/publish_reports.sh '$$TARGET_HOSTNAME$$$' $(pwd)
+        run: |
+          chmod +x ./scripts/bash/publish_reports.sh
+          ./scripts/bash/publish_reports.sh '$$TARGET_HOSTNAME$$$' $(pwd)

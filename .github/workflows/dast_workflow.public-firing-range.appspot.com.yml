@@ -28,4 +28,6 @@ jobs:
           cmd_options: -a -T 3 -n ./contexts/public-firing-range.appspot.com.context
 
       - name: Publish Scan Results
-        run: ./scripts/bash/publish_reports.sh 'public-firing-range.appspot.com' $(pwd)
+        run: |
+          chmod +x ./scripts/bash/publish_reports.sh
+          ./scripts/bash/publish_reports.sh 'public-firing-range.appspot.com' $(pwd)
