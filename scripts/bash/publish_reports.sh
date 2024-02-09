@@ -6,10 +6,12 @@
 
 # define vars
 TIMESTAMP=$(TZ=UTC date +%s)
-UTC_MONTH=$(TZ=UTC date +%m)
+UTC_DAY=$(TZ=UTC date +%d)
+UTC_MONTH_NUMERIC=$(TZ=UTC date +%m)
+UTC_MONTH_ALPHA=$(TZ=UTC date +%b | tr '[:upper:]' '[:lower:]')
 UTC_YEAR=$(TZ=UTC date +%Y)
 TARGET=$1
-DIR_PATH="reporting/output/${UTC_YEAR}/${UTC_MONTH}"
+DIR_PATH="reporting/output/${UTC_YEAR}/${UTC_MONTH_NUMERIC}_${UTC_MONTH_ALPHA}/${UTC_DAY}"
 EXECUTION_CONTEXT=$2
 
 # create timestamped report output files and clean up
