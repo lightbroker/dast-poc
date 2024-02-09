@@ -1,1 +1,4 @@
-{}
+{
+  "https://altoro.testfire.net": "30 4 22 * *",
+  "https://public-firing-range.appspot.com": "15 4 15 * *"
+}
