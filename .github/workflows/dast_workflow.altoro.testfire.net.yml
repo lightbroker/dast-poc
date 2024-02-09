@@ -28,4 +28,6 @@ jobs:
           cmd_options: -a -T 3 -n ./contexts/altoro.testfire.net.context
 
       - name: Publish Scan Results
-        run: ./scripts/bash/publish_reports.sh 'altoro.testfire.net' $(pwd)
+        run: |
+          chmod +x ./scripts/bash/publish_reports.sh
+          ./scripts/bash/publish_reports.sh 'altoro.testfire.net' $(pwd)
