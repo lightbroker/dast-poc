@@ -1,3 +1,9 @@
+# Usage:
+#
+#   $ ./publish_reports.sh 'example.hostname.com' $(pwd)
+#
+
+
 # define vars
 TIMESTAMP=$(TZ=UTC date +%s)
 UTC_MONTH=$(TZ=UTC date +%m)

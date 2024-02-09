@@ -133,15 +133,3 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 
-**/appsettings.Development.json
-
-**/Properties/PublishProfiles/
-**/Properties/ServiceDependencies/
-**/.vs
-src/DastPocTarget/.vs/DastPocTarget/v17/.suo
-src/DastPocTarget/.vs/ProjectEvaluation/dastpoctarget.metadata.v5.2
-src/DastPocTarget/DastPocTarget.csproj.user
-src/DastPocTarget/.vs/DastPocTarget/DesignTimeBuild/.dtbcache.v2
-src/DastPocTarget/.vs/DastPocTarget/v17/.suo
-src/DastPocTarget/.vs/ProjectEvaluation/dastpoctarget.metadata.v5.2
-src/DastPocTarget/.vs/ProjectEvaluation/dastpoctarget.projects.v5.2
