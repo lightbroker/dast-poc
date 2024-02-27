@@ -25,7 +25,7 @@ jobs:
           rules_file_name: 'rules/rules.altoro.testfire.net.tsv'
           allow_issue_writing: true
           issue_title: 'DAST Scan: altoro.testfire.net'
-          cmd_options: -a -T 3 -n ./contexts/altoro.testfire.net.context
+          cmd_options: -a -T 3 -U "admin" -n ./contexts/altoro.testfire.net.context
 
       - name: Publish Scan Results
         run: |
